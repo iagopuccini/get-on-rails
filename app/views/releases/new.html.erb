@@ -1,0 +1,34 @@
+<div class="card mb-3">
+  <%= form_with(model: [ @artist, @artist.releases.build ], local: true) do |form| %>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12">
+          <% if @release.errors.any? %>
+            <div id="error_explanation">
+              <h2>
+                <%= pluralize(@release.errors.count, "error") %> prohibited
+                this release from being saved:
+              </h2>
+              <ul>
+                <% @release.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <div class="form-group">
+            <label for="title" class="control-label custom-control-label">Title</label>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fas fa-compact-disc" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" id="release-title" name="release[title]" value="<%= @release.title %>">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <button type="submit" class="btn btn-primary btn-lg btn-block login-button">Save</button>
+      </div>
+    </div>
+  <% end %>
+</div>

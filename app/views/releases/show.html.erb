@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<div class="card mb-3">
+  <div class="card-header">
+    <i class="fas fa-compact-disc"></i>
+    <%= @release.title %>
+  </div>
+  <div class="card-body">
+    <p>Year: <%= @release.year %></p>
+    <p>Artist: <%= link_to @artist.name, artist_path(@artist) %></p>
+  </div>
+</div>

@@ -10,5 +10,6 @@
   </div>
   <div class="card-body">
     <p>Profile: <%= @artist.profile %></p>
+    <p><%= link_to 'Releases', artist_releases_path(@artist) %></p>
   </div>
 </div>
